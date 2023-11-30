@@ -11,6 +11,9 @@ export class PaginationComponent {
   @Input() currentPage: number;
 
   @Output() pageChanged: EventEmitter<number> = new EventEmitter();
+
+  // Other component logic...
+
   constructor() {
     this.pageSize = 10; // Example default value, adjust as needed
     this.totalItems = 100;

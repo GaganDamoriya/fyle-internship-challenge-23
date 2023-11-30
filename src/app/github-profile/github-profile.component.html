@@ -1,6 +1,17 @@
 <div *ngIf="isLoading; else content">
   <!-- Skeleton or loading animation goes here -->
-  Loading...
+  <div class="w-full md:w-9/12 flex flex-col mx-auto items-center mt-9">
+    <div class="flex gap-5 md:gap-10 items-center w-10/12 md:9/12">
+      <div class="skeleton-avatar w-24 h-24 md:w-32 md:h-32"></div>
+      <div class="w-9/12 flex flex-col gap-3 md:gap-5">
+        <div class="skeleton-loader"></div>
+        <div class="skeleton-loader"></div>
+      </div>
+    </div>
+    <div
+      class="mt-10 md:mt-15 h-40 w-10/12 md:w-9/12 mx-auto skeleton-loader"
+    ></div>
+  </div>
 </div>
 <ng-template #content>
   <div
@@ -41,7 +52,9 @@
       </div>
     </div>
     <div class="block w-9/12">
-      <span class="underline decoration-solid text-violet-500">Repository</span>
+      <span class="underline decoration-solid text-l md:text-xl text-violet-500"
+        >Repository</span
+      >
     </div>
     <div class="grid md:grid-cols-2 grid-cols-1 gap-10 w-9/12">
       <app-repository

@@ -4,3 +4,24 @@
   flex-direction: column;
   gap: 30px;
 }
+.skeleton-loader {
+  background-color: rgb(73, 71, 71);
+  padding: 20px;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+.skeleton-avatar {
+  background-color: #ddd;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
