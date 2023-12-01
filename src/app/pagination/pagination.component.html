@@ -1,12 +1,8 @@
 <!-- pagination.component.html -->
 
 <div class="pagination">
-  <button
-    mat-icon-button
-    *ngIf="currentPage > 1"
-    (click)="onPageChange(currentPage - 1)"
-  >
-    <mat-icon>keyboard_arrow_left</mat-icon>
+  <button *ngIf="currentPage > 1" (click)="onPageChange(currentPage - 1)">
+    &lt;
   </button>
 
   <div
@@ -18,10 +14,9 @@
   </div>
 
   <button
-    mat-icon-button
     *ngIf="currentPage < totalPages"
     (click)="onPageChange(currentPage + 1)"
   >
-    <mat-icon>keyboard_arrow_right</mat-icon>
+    >
   </button>
 </div>
