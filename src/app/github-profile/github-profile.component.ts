@@ -24,7 +24,6 @@ export class GithubProfileComponent implements OnInit {
     });
     try {
       this.data = await lastValueFrom(this.UserData.getUser(this.username));
-      console.log(this.data);
       await this.loadRepos();
       this.isLoading = false;
       // Handle the data as needed in this component
@@ -34,14 +33,14 @@ export class GithubProfileComponent implements OnInit {
     }
   }
   async loadRepos(): Promise<void> {
-    this.route.params.subscribe((params) => {
-      this.username = params['name'];
-    });
+    if (!this.username) {
+      // Handle the case where username is not available
+      return;
+    }
     try {
       this.Repodata = await lastValueFrom(
         this.UserData.getRepos(this.username, this.currentPage, this.pageSize)
       );
-      console.log(this.Repodata);
       // Handle the data as needed in this component
     } catch (error) {
       console.error('Error:', error);

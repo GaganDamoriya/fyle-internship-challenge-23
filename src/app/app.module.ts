@@ -5,11 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
-import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { RouterModule, Routes, Router } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users/:name', component: GithubProfileComponent },
+];
 
 @NgModule({
   declarations: [
@@ -25,10 +30,7 @@ import { RepositoryComponent } from './repository/repository.component';
     HttpClientModule,
     FormsModule,
     MatIconModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'users/:name', component: GithubProfileComponent },
-    ]),
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent],

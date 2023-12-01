@@ -22,7 +22,6 @@ export class HomeComponent {
 
       //fetching api
       const data = await lastValueFrom(this.UserData.getUser(this.message));
-      console.log(data);
       //set lastusedusername prpty
       this.UserData.setLastUsedUsername(this.message);
       //navigate if OK!
